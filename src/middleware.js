@@ -17,8 +17,15 @@ export default function middleware(req) {
     const token = authHeader.split(" ")[1];
 
     try {
-      jwt.verify(token, process.env.NEXT_PUBLIC_JWT_SECRET);
-      return NextResponse.next();
+      const decoded = jwt.verify(token, process.env.NEXT_PUBLIC_JWT_SECRET);
+
+      req.headers.set("x-user-id", decoded.userId);
+      req.headers.set("x-tenant-id", decoded.tenantId);
+      req.headers.set("x-role", decoded.role);
+
+      return NextResponse.next({
+        request: { headers: req.headers },
+      });
     } catch (err) {
       return NextResponse.json(
         { message: "Invalid or expired token" },
@@ -34,6 +41,3 @@ export const config = {
   matcher: ["/api/notes/:path*", "/api/tenants/:path*"],
   runtime: "nodejs",
 };
-
-
-
