@@ -45,13 +45,13 @@ export default function EditNotePage({ params }) {
       onSubmit={handleUpdate}
       className="bg-white p-6 shadow rounded-lg max-w-lg mx-auto mt-6"
     >
-      <h2 className="text-xl font-bold mb-4">Edit Note</h2>
+      <h2 className="text-xl text-black font-bold mb-4">Edit Note</h2>
       <input
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Title"
-        className="w-full border p-2 mb-4 rounded"
+        className="w-full text-black border p-2 mb-4 rounded"
         required
       />
       <textarea
@@ -59,7 +59,7 @@ export default function EditNotePage({ params }) {
         onChange={(e) => setContent(e.target.value)}
         placeholder="Content"
         rows={6}
-        className="w-full border p-2 mb-4 rounded"
+        className="w-full text-black border p-2 mb-4 rounded"
         required
       />
       <button

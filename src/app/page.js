@@ -4,7 +4,7 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-azure-100">
       <div className="text-center p-8">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-azure-700 mb-6">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-white-700 mb-6">
           Simplify Your Notes, Securely
         </h1>
         <p className="text-gray-600 text-lg mb-10">
@@ -19,7 +19,7 @@ export default function LandingPage() {
           </Link>
           <Link
             href="/auth?mode=signup"
-            className="px-6 py-3 bg-white border border-azure-600 text-black-900 rounded-xl shadow hover:bg-azure-50 transition"
+            className="px-6 py-3 bg-white text-black border border-azure-600 text-black-900 rounded-xl shadow hover:bg-azure-50 transition"
           >
             Get Started
           </Link>

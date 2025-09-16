@@ -28,7 +28,7 @@ export default function DashboardPage() {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-semibold">Your Notes</h2>
+        <h2 className="text-2xl text-black font-semibold">Your Notes</h2>
         <button
           onClick={() => router.push("/dashboard/new")}
           className="bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-700 transition"
@@ -44,7 +44,7 @@ export default function DashboardPage() {
             onClick={() => router.push(`/dashboard/${note.id}`)}
             className="p-4 bg-white shadow rounded-lg cursor-pointer hover:shadow-md transition"
           >
-            <h3 className="text-lg font-bold">{note.title}</h3>
+            <h3 className="text-lg text-black font-bold">{note.title}</h3>
             <p className="text-gray-600 text-sm truncate">{note.content}</p>
           </div>
         ))}

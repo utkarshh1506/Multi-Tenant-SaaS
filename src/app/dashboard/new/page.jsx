@@ -25,19 +25,19 @@ export default function NewNotePage() {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 shadow rounded-lg">
-      <h2 className="text-xl font-semibold mb-4">Create a New Note</h2>
+      <h2 className="text-xl text-black font-semibold mb-4">Create a New Note</h2>
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Title"
-        className="w-full p-2 border rounded mb-3"
+        className="w-full text-black p-2 border rounded mb-3"
         required
       />
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="Content"
-        className="w-full p-2 border rounded mb-3"
+        className="w-full text-black p-2 border rounded mb-3"
         rows={5}
       />
       <button

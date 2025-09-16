@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useState,use } from "react";
+import { useEffect, useState, use } from "react";
 import { useRouter } from "next/navigation";
 
 export default function NoteDetailPage({ params }) {
-    const {id} = use(params)
+  const { id } = use(params);
   const [note, setNote] = useState(null);
   const [user, setUser] = useState(null);
   const router = useRouter();
@@ -42,7 +42,7 @@ export default function NoteDetailPage({ params }) {
   if (!note) return <p>Loading...</p>;
 
   const handleEdit = () => {
-    router.push(`/dashboard/${note.id}/edit`);
+    router.push(`/notes/${note.id}/edit`);
   };
 
   const handleDelete = async () => {
@@ -63,13 +63,12 @@ export default function NoteDetailPage({ params }) {
 
   // ✅ Check permission: Admin OR Owner
   const canEditOrDelete =
-    user &&
-    (user.role === "ADMIN" || user.id === note.userId);
+    user && (user.role === "ADMIN" || user.id === note.userId);
 
   return (
     <div className="bg-white p-6 shadow rounded-lg">
-      <h2 className="text-2xl font-bold mb-4">{note.title}</h2>
-      <p className="text-gray-700 whitespace-pre-line mb-6">{note.content}</p>
+      <h2 className="text-2xl text-black font-bold mb-4">{note.title}</h2>
+      <p className="text-black-700 whitespace-pre-line mb-6">{note.content}</p>
 
       {canEditOrDelete && (
         <div className="flex gap-4">

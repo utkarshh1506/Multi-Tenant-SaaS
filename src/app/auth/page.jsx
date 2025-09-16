@@ -32,7 +32,7 @@ export default function AuthPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-azure-50">
       <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
-        <h2 className="text-3xl font-bold text-center text-azure-700 mb-6">
+        <h2 className="text-3xl font-bold text-center text-black-700 mb-6">
           {mode === "login" ? "Sign In" : "Create Account"}
         </h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -64,7 +64,7 @@ export default function AuthPage() {
           />
           <button
             type="submit"
-            className="bg-sky-600 text-white py-3 rounded-lg hover:bg-sky-700 transition"
+            className="bg-sky-600 text-black py-3 rounded-lg hover:bg-sky-700 transition"
           >
             {mode === "login" ? "Sign In" : "Sign Up"}
           </button>
@@ -75,7 +75,7 @@ export default function AuthPage() {
               Don’t have an account?{" "}
               <a
                 href="/auth?mode=signup"
-                className="text-azure-600 font-semibold"
+                className="text-black-600 font-semibold"
               >
                 Get Started
               </a>
@@ -85,7 +85,7 @@ export default function AuthPage() {
               Already a member?{" "}
               <a
                 href="/auth?mode=login"
-                className="text-azure-600 font-semibold"
+                className="text-black-600 font-semibold"
               >
                 Sign In
               </a>
