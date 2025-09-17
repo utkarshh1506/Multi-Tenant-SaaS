@@ -68,7 +68,7 @@ export default function NoteDetailPage({ params }) {
   return (
     <div className="bg-white p-6 shadow rounded-lg">
       <h2 className="text-2xl text-black font-bold mb-4">{note.title}</h2>
-      <p className="text-black-700 whitespace-pre-line mb-6">{note.content}</p>
+      <p className="text-black whitespace-pre-line mb-6">{note.content}</p>
 
       {canEditOrDelete && (
         <div className="flex gap-4">
