@@ -43,7 +43,7 @@ function AuthForm() {
           <input
             type="text"
             placeholder="Full Name"
-            className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-azure-400"
+            className="border text-black rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-azure-400"
             value={form.name}
             onChange={handleChange("name")}
             required
@@ -52,7 +52,7 @@ function AuthForm() {
         <input
           type="email"
           placeholder="Email"
-          className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-azure-400"
+          className="border text-black rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-azure-400"
           value={form.email}
           onChange={handleChange("email")}
           required
@@ -60,7 +60,7 @@ function AuthForm() {
         <input
           type="password"
           placeholder="Password"
-          className="border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-azure-400"
+          className="border text-black rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-azure-400"
           value={form.password}
           onChange={handleChange("password")}
           required

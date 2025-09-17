@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Multi-Tenant Notes App
 
-## Getting Started
+This project is a **Next.js 15 + TypeScript** web application with **Prisma ORM** connected to **Supabase PostgreSQL**.  
+It includes authentication, database seeding, and deployment on **Vercel**.
 
-First, run the development server:
+---
+
+## 🚀 Features
+- ✅ Next.js 15 with TypeScript  
+- ✅ Authentication (Login & Register)  
+- ✅ Prisma ORM for database modeling  
+- ✅ Supabase PostgreSQL as database  
+- ✅ Database seeding with Prisma  
+- ✅ Deployment on Vercel  
+
+---
+
+## 📂 Project Structure
+```
+
+.
+├── prisma/            # Prisma schema & migrations
+├── src/
+│   ├── app/           # Next.js App Router
+│   ├── lib/           # DB connection & utilities
+│   ├── components/    # Reusable components
+│   └── pages/         # Routes (if used)
+├── .env.local         # Local environment variables
+├── package.json
+└── README.md
+
+````
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone Repository
+```bash
+git clone <your-repo-url>
+cd <your-project-name>
+````
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Configure Environment Variables
+
+Create a `.env` file in the root folder:
+
+```env
+DATABASE_URL=your_supabase_URL
+NEXT_PUBLIC_JWT_SECRET=your_secret_key
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+> Replace `<project-ref>` and `[YOUR-PASSWORD]` with your **Supabase credentials**.
+> You can find them in **Supabase → Project Settings → Database**.
+
+---
+
+## 🛠️ Prisma Setup
+
+### 4️⃣ Generate Prisma Client
+
+```bash
+npx prisma generate
+```
+
+### 5️⃣ Run Migrations
+
+```bash
+npx prisma migrate deploy
+```
+
+### 6️⃣ Seed Database
+
+Add your seeding logic in `prisma/seed.ts`, then run:
+
+```bash
+npx prisma db seed
+```
+
+---
+
+## 🧪 Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will run on: **[http://localhost:3000](http://localhost:3000)**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌍 Deployment on Vercel
 
-## Learn More
+1. Push your code to GitHub.
+2. Go to [Vercel](https://vercel.com).
+3. Import your repository.
+4. Add environment variables (`DATABASE_URL`) in **Project → Settings → Environment Variables**.
+5. Deploy 🚀
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✅ Verification
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Check Prisma connection:
 
-## Deploy on Vercel
+```bash
+npx prisma studio
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Check logs in Vercel if errors occur:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+vercel logs <deployment-url>
+```
+
+---
+
+## 📌 Tech Stack
+
+* **Next.js 15**
+* **TypeScript**
+* **Prisma ORM**
+* **Supabase PostgreSQL**
+* **Vercel**
+
